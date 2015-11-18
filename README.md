@@ -13,7 +13,7 @@ usage: pin_tool.py [-h] [-e] [-l LEN] [-c NUMBER] [-b CHARACTER] [-a ARCH]&nbsp;
 &nbsp; -h, --help &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;show this help message and exit<br />
 &nbsp; -e &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Study the password length, for example -e -l 40, with 40&nbsp;characters<br />
 &nbsp; -l LEN &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Length of password (Default: 10 )<br />
-&nbsp; -c NUMBER &nbsp; &nbsp; &nbsp; &nbsp; Charset definition for brute force (1-Lowercase, 2-Uppecase,&nbsp;3-Numbers, 4-Hexadecimal, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5-&nbsp;Punctuation, 6-All)<br />
+&nbsp; -c NUMBER &nbsp; &nbsp; &nbsp; &nbsp; Charset definition for brute force (1-Lowercase, 2-Uppecase,&nbsp;3-Numbers, 4-Hexadecimal, &nbsp;  5-&nbsp;Punctuation, 6-All)<br />
 &nbsp; -b CHARACTER &nbsp; Add characters for the charset, example -b _-<br />
 &nbsp; -a ARCH &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Program architecture 32 or 64 bits, -b 32 or -b 64<br />
 &nbsp; -i INITPASS &nbsp; &nbsp; &nbsp; &nbsp; Inicial password characters, example -i CTF{<br />
