@@ -1,4 +1,4 @@
-# pintool
+# Pintool
 
 <p>This tool can be useful for solving some reversing challenges in CTFs events. Implements the technique described here:</p>
 
@@ -7,7 +7,7 @@
 &nbsp;&nbsp;<br />
 &nbsp;&nbsp;<br />
 </p>
-# configuration
+# Configuration
 
 <p>You must configure your pin PATH inside of script<br /><br />
 
