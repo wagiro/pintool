@@ -9,9 +9,9 @@
 
 # configuration
 
-You must configure your pin PATH inside of script
+<p>You must configure your pin PATH inside of script<br /><br />
 
-<p>PIN = "./pin-2.13-62732-gcc.4.4.7-linux/pin"<br />
+PIN = "./pin-2.13-62732-gcc.4.4.7-linux/pin"<br />
 INSCOUNT32 = "./pin-2.13-62732-gcc.4.4.7-linux/inscount0.so"<br />
 INSCOUNT64 = "./pin-2.13-62732-gcc.4.4.7-linux/source/tools/ManualExamples/obj-intel64/inscount0.so"<br /></p>
 &nbsp;&nbsp;<br />
