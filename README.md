@@ -34,7 +34,7 @@ usage: pin_tool.py [-h] [-e] [-l LEN] [-c NUMBER] [-b CHARACTER] [-a ARCH]&nbsp;
 &nbsp; -a ARCH &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Program architecture 32 or 64 bits, -b 32 or -b 64<br />
 &nbsp; -i INITPASS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Inicial password characters, example -i CTF{<br />
 &nbsp; -s SIMBOL &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Simbol for complete all password (Default: _ )<br />
-&nbsp; -d EXPRESSION &nbsp; &nbsp;Difference between instructions that are successful or not&nbsp;&nbsp;(Default: != 0, example -d &#39;== &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-12&#39;, -d &#39;=&gt; 900&#39;, -d &#39;&lt;= 17&#39;&nbsp;&nbsp;or -d &#39;!= 32&#39;)<br />
+&nbsp; -d EXPRESSION &nbsp; &nbsp;Difference between instructions that are successful or not&nbsp;&nbsp;(Default: != 0, example -d &#39;== -12&#39;, -d &#39;=&gt; 900&#39;, -d &#39;&lt;= 17&#39;&nbsp;&nbsp;or -d &#39;!= 32&#39;)<br />
 &nbsp;&nbsp;</p>
 
 <p>&nbsp;</p>
