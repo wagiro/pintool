@@ -6,13 +6,14 @@
 &nbsp;&nbsp;<br />
 &nbsp;&nbsp;<br />
 &nbsp;&nbsp;<br />
-# Configuration
+
+# configuration
 
 You must configure your pin PATH inside of script
 
-PIN = "./pin-2.13-62732-gcc.4.4.7-linux/pin"
-INSCOUNT32 = "./pin-2.13-62732-gcc.4.4.7-linux/inscount0.so"
-INSCOUNT64 = "./pin-2.13-62732-gcc.4.4.7-linux/source/tools/ManualExamples/obj-intel64/inscount0.so"
+<p>PIN = "./pin-2.13-62732-gcc.4.4.7-linux/pin"<br />
+INSCOUNT32 = "./pin-2.13-62732-gcc.4.4.7-linux/inscount0.so"<br />
+INSCOUNT64 = "./pin-2.13-62732-gcc.4.4.7-linux/source/tools/ManualExamples/obj-intel64/inscount0.so"<br /></p>
 &nbsp;&nbsp;<br />
 &nbsp;&nbsp;<br />
 &nbsp;&nbsp;<br />
