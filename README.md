@@ -6,7 +6,7 @@
 &nbsp;&nbsp;<br />
 &nbsp;&nbsp;<br />
 &nbsp;&nbsp;<br />
-
+</p>
 # configuration
 
 <p>You must configure your pin PATH inside of script<br /><br />
