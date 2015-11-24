@@ -5,6 +5,19 @@
 <p>&nbsp; http://shell-storm.org/blog/A-binary-analysis-count-me-if-you-can/<br />
 &nbsp;&nbsp;<br />
 &nbsp;&nbsp;<br />
+&nbsp;&nbsp;<br />
+# Configuration
+
+You must configure your pin PATH inside of script
+
+PIN = "./pin-2.13-62732-gcc.4.4.7-linux/pin"
+INSCOUNT32 = "./pin-2.13-62732-gcc.4.4.7-linux/inscount0.so"
+INSCOUNT64 = "./pin-2.13-62732-gcc.4.4.7-linux/source/tools/ManualExamples/obj-intel64/inscount0.so"
+&nbsp;&nbsp;<br />
+&nbsp;&nbsp;<br />
+&nbsp;&nbsp;<br />
+# Examples
+
 $python pintool.py&nbsp;<br />
 usage: pin_tool.py [-h] [-e] [-l LEN] [-c NUMBER] [-b CHARACTER] [-a ARCH]&nbsp;[-i INITPASS] [-s SIMBOL] [-d EXPRESSION]&nbsp; Filename</p>
 
@@ -25,7 +38,7 @@ usage: pin_tool.py [-h] [-e] [-l LEN] [-c NUMBER] [-b CHARACTER] [-a ARCH]&nbsp;
 
 <p>&nbsp;</p>
 
-# Examples
+
 
 <p><strong>Baleful - picoCTF 2014</strong></p>
 
