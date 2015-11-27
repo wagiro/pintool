@@ -23,7 +23,7 @@ INSCOUNT64 = "./pin-2.13-62732-gcc.4.4.7-linux/source/tools/ManualExamples/obj-i
 
 def start():
 	
-	parser = argparse.ArgumentParser(prog='pin_tool.py')
+	parser = argparse.ArgumentParser(prog='pintool.py')
 	parser.add_argument('-e', dest='study', action='store_true', default=False, help='Study the password length, for example -e -l 40, with 40 characters')
 	parser.add_argument('-l', dest='len', type=str, nargs=1, default='10', help='Length of password (Default: 10 )')
 	parser.add_argument('-c', dest='number', type=str, default=1, help="Charset definition for brute force\n (1-Lowercase,\n2-Uppecase,\n3-Numbers,\n4-Hexadecimal,\n5-Punctuation,\n6-All)")
