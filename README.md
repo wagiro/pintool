@@ -20,7 +20,7 @@ INSCOUNT64 = "./pin-2.13-62732-gcc.4.4.7-linux/source/tools/ManualExamples/obj-i
 
 ```sh
 $python pintool.py 
-usage: pin_tool.py [-h] [-e] [-l LEN] [-c NUMBER] [-b CHARACTER] [-a ARCH]
+usage: pintool.py [-h] [-e] [-l LEN] [-c NUMBER] [-b CHARACTER] [-a ARCH]
                    [-i INITPASS] [-s SIMBOL] [-d EXPRESSION]
                    Filename
 
@@ -121,7 +121,7 @@ CTF{c9fd99de8eb082c66c4ce4039f19c4fc}
 **wyvern 500 - CSAW CTF 2015**
 
 ```sh
-$python test_pin.py -c 1,2,3 -b _ -s - -a 64 -l 28 wyvern
+$python pintool.py -c 1,2,3 -b _ -s - -a 64 -l 28 wyvern
 d--------------------------- = 1505212 difference 10332 instructions
 dr-------------------------- = 1515830 difference 10618 instructions
 dr4------------------------- = 1521965 difference 6135 instructions
