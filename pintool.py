@@ -16,9 +16,9 @@ import re
 
 
 #configure by the user
-PIN = "./pin-2.13-62732-gcc.4.4.7-linux/pin"
-INSCOUNT32 = "./pin-2.13-62732-gcc.4.4.7-linux/inscount0.so"
-INSCOUNT64 = "./pin-2.13-62732-gcc.4.4.7-linux/source/tools/ManualExamples/obj-intel64/inscount0.so"
+PIN = "./pin-3.6-97554-g31f0a167d-gcc-linux/pin"
+INSCOUNT32 = "./pin-3.6-97554-g31f0a167d-gcc-linux/source/tools/ManualExamples/obj-ia32/inscount0.so"
+INSCOUNT64 = "./pin-3.6-97554-g31f0a167d-gcc-linux/source/tools/ManualExamples/obj-intel64/inscount0.so"
 
 
 def start():
@@ -32,6 +32,7 @@ def start():
 	parser.add_argument('-i', dest='initpass', type=str, nargs=1, default='', help='Inicial password characters, example -i CTF{')
 	parser.add_argument('-s', dest='simbol', type=str, nargs=1, default='_', help='Simbol for complete all password (Default: _ )')
 	parser.add_argument('-d', dest='expression', type=str, nargs=1, default='!= 0', help="Difference between instructions that are successful or not (Default: != 0, example -d '== -12', -d '=> 900', -d '<= 17' or -d '!= 32')")
+	parser.add_argument('-r', dest='reverse', action='store_true', default=False, help='Reverse order. Bruteforce from the last character')
 	parser.add_argument('Filename',help='Program for playing with Pin Tool')
 
 
@@ -93,48 +94,70 @@ def lengthdetect(passlen):
 
 		print "%s = with %d characters difference %d instructions" %(password, i, inscount-inicialdifference)
 
+def addchar(initpass, char):
+
+	if args.reverse:
+		initpass = char + initpass
+	else:
+		initpass += char
+
+	return initpass
+
+
 
 def solve(initpass,passlen,symbfill,charset,expression):
 	
+
 	initlen = len(initpass)
 	
 	for i in range(initlen,passlen):
-		
-		tempassword = initpass + symbfill*(passlen-i)
+	
+
+		if args.reverse:
+			tempassword = symbfill*(passlen-i) + initpass
+		else:
+			tempassword = initpass + symbfill*(passlen-i)
+
 		inicialdifference = 0
 
+		if args.reverse:
+			i = passlen - i
+
 		for char in charset:
-			
-			password = tempassword[:i] + '\\'+char + tempassword[i+1:]
+		
+			password = tempassword[:i-1] + '\\'+char + tempassword[i:]
 			inscount = pin(password)
-			
+		
+			newpass = password.replace("\\","", 1)
+
 			if inicialdifference == 0:
 				inicialdifference = inscount
 
 			difference = inscount-inicialdifference
 
-			print "%s = %d difference %d instructions" %(password.replace("\\","",1), inscount, difference)
+			print "%s = %d difference %d instructions" %(newpass, inscount, difference)
+
 			sys.stdout.write("\033[F")
 
 			if "!=" in expression:
 				if difference != int(number):
-					print "%s = %d difference %d instructions" %(password.replace("\\","",1), inscount, difference)
-					initpass += char
+					print "%s = %d difference %d instructions" %(newpass, inscount, difference)
+					initpass = addchar(initpass, char)
 					break
 			elif "==" in expression:
 				if difference == int(number):
-					print "%s = %d difference %d instructions" %(password.replace("\\","",1), inscount, difference)
-					initpass += char
+					print "%s = %d difference %d instructions" %(newpass, inscount, difference)
+					initpass = addchar(initpass, char)
 					break
 			elif "<=" in expression:
 				if difference <= int(number):
-					print "%s = %d difference %d instructions" %(password.replace("\\","",1), inscount, difference)
-					initpass += char
+					print "%s = %d difference %d instructions" %(newpass, inscount, difference)
+					initpass = addchar(initpass, char)
 					break
 			elif "=>" in expression:
 				if difference >= int(number):
-					print "%s = %d difference %d instructions" %(password.replace("\\","",1), inscount, difference)
-					initpass += char
+					print "%s = %d difference %d instructions" %(newpass, inscount, difference)
+					initpass = addchar(initpass, char)
 					break
 			else:
 				print "Unknown value for -d option"
