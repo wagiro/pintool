@@ -35,7 +35,7 @@ optional arguments:
   -c NUMBER      Charset definition for brute force (1-Lowercase, 2-Uppecase,
                  3-Numbers, 4-Hexadecimal, 5-Punctuation, 6-All)
   -b CHARACTER   Add characters for the charset, example -b _-
-  -a ARCH        Program architecture 32 or 64 bits, -b 32 or -b 64
+  -a ARCH        Program architecture 32 or 64 bits, -a 32 or -a 64
   -i INITPASS    Inicial password characters, example -i CTF{
   -s SIMBOL      Simbol for complete all password (Default: _ )
   -d EXPRESSION  Difference between instructions that are successful or not
