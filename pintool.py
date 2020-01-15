@@ -2,7 +2,7 @@
 #coding: utf8 
 #
 #prog_name= 'pintool.py'
-#prog_version = '0.2'
+#prog_version = '0.3'
 #prog_release = '20151028'
 #prog_author = 'Eduardo Garcia Melia'
 #prog_author_mail = 'wagiro@gmail.com'
@@ -16,9 +16,9 @@ import re
 
 
 #configure by the user
-PIN = "./pin-3.6-97554-g31f0a167d-gcc-linux/pin"
-INSCOUNT32 = "./pin-3.6-97554-g31f0a167d-gcc-linux/source/tools/ManualExamples/obj-ia32/inscount0.so"
-INSCOUNT64 = "./pin-3.6-97554-g31f0a167d-gcc-linux/source/tools/ManualExamples/obj-intel64/inscount0.so"
+PIN = "./pin-3.11-97998-g7ecce2dac-gcc-linux/pin"
+INSCOUNT32 = "./pin-3.11-97998-g7ecce2dac-gcc-linux/source/tools/ManualExamples/obj-ia32/inscount0.so"
+INSCOUNT64 = "./pin-3.11-97998-g7ecce2dac-gcc-linux/source/tools/ManualExamples/obj-intel64/inscount0.so"
 
 
 def start():
@@ -125,7 +125,11 @@ def solve(initpass,passlen,symbfill,charset,expression):
 
 		for char in charset:
 		
-			password = tempassword[:i-1] + '\\'+char + tempassword[i:]
+			if args.reverse:
+				password = tempassword[:i-1] + '\\'+char + tempassword[i:]
+			else:
+				password = tempassword[:i] + '\\'+char + tempassword[i+1:]
+				
 			inscount = pin(password)
 		
 			newpass = password.replace("\\","", 1)
